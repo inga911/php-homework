@@ -1,5 +1,6 @@
 
-<?php 
+<?php
+
 echo '<h1><b>KINTAMIEJI IR SALYGOS.</b></h1>';
 //1.
 echo '<h3><b>PIRMOJI UZDUOTIS.</b></h3>';
@@ -8,7 +9,7 @@ echo '<h3><b>PIRMOJI UZDUOTIS.</b></h3>';
     $birthDate = 1995;
     $thisYear = 2023;
     $years = $thisYear - $birthDate;
-    echo "As esu $name $lastName. Man yra $years metai."; 
+    echo "As esu " . $name . ' ' .  $lastName . ". Man yra " . $years . " metai."; "\n";
 
 //2. 
 echo '<h3><b>ANTROJI UZDUOTIS.</b></h3>';
@@ -19,8 +20,8 @@ echo '<h3><b>ANTROJI UZDUOTIS.</b></h3>';
     $AB = match(true) {
         $a === 0 => 'Negalima dalinti is 0',
         $b === 0 => 'Negalima dalinti is 0',
-        $a >= $b && $a !== 0 => $a / $b,
-        $a <= $b && $b !== 0 => $b / $a,
+        $a >= $b && $a !== 0 => 'Cia padalinta a is b --> ' . $a / $b,
+        $a <= $b && $b !== 0 => 'Cia padalinta b is a --> ' . $b / $a,
     };
     echo $AB;
 
@@ -30,7 +31,7 @@ echo '<h3><b>TRECIOJI UZDUOTIS.</b></h3>';
     $c = rand(0, 25);
     $d = rand(0, 25);
     $e = rand(0, 25);
-    echo "Cia matomi $c, $d ir $e atsitiktiniai skaiciai.<br> ";
+    echo 'Cia matomi ' . $c . ', ' . $d . ' ir ' . $e . ' atsitiktiniai skaiciai<br>';
 
     if ($c > $d) {
         [$c, $d] = [$d, $c];
@@ -43,17 +44,7 @@ echo '<h3><b>TRECIOJI UZDUOTIS.</b></h3>';
     } 
 
     $vidurinisSkaicius = $d;
-    echo "Cia matomas vidurinis uzduoties skaicius: $vidurinisSkaicius";
-
-//   if ($c > $d && $d > $e) {
-//         echo "vidurinis yra $d";
-//     }
-//     if ($d > $c && $c > $e) {
-//         echo "vidurinis yra $c";
-//     } 
-//     if ($c > $e && $e > $d) {
-//         echo "vidurinis yra $e";
-//     }
+    echo 'Cia matomas vidurinis uzduoties skaicius: ' . $vidurinisSkaicius;
 
     //4.
     echo '<h3><b>KETVIRTOJI UZDUOTIS.</b></h3>';
@@ -61,35 +52,74 @@ echo '<h3><b>TRECIOJI UZDUOTIS.</b></h3>';
     $krastine_1 = rand(1, 10);
     $krastine_2 = rand(1, 10);
     $krastine_3 = rand(1, 10);
-    echo "Cia matomi  $krastine_1, $krastine_2 ir $krastine_3 atsitiktiniai krastiniu ilgiai.<br>";
+    echo 'Cia matomi  ' . $krastine_1 . ', ' .  $krastine_2 . ' ir ' . $krastine_3 . ' atsitiktiniai krastiniu ilgiai.<br>';
 
     $trikampis = match(true) {
-        ($krastine_1 + $krastine_2) > $krastine_3 => 'Trikampi sudaryti GALIMA',
-        ($krastine_2 + $krastine_3) > $krastine_1 => 'Trikampi sudaryti GALIMA',
-        ($krastine_3 + $krastine_1) > $krastine_2 => 'Trikampi sudaryti GALIMA',
+        ($krastine_1 + $krastine_2) > $krastine_3 => 'Trikampi sudaryti GALIMA.',
+        ($krastine_2 + $krastine_3) > $krastine_1 => 'Trikampi sudaryti GALIMA.',
+        ($krastine_3 + $krastine_1) > $krastine_2 => 'Trikampi sudaryti GALIMA.',
         default => 'Trikampio sudaryti NEgalima',
     };
     echo $trikampis;
 
     //5.
-    // echo '<h3><b>PENKTOJI UZDUOTIS.</b></h3>';
+    echo '<h3><b>PENKTOJI UZDUOTIS.</b></h3>';
 
-    // $pirmas_kintamas = rand(0, 2);
-    // $antras_kintamas = rand(0, 2);
-    // $trecias_kintamas = rand(0, 2);
-    // $ketvirtas_kintamas = rand(0, 2);
-    // echo "Cia matomi keturi random skaiciai: $pirmas_kintamas, $antras_kintamas, $trecias_kintamas, $ketvirtas_kintamas";
+    $pirmas_kintamas = rand(0, 2);
+    $antras_kintamas = rand(0, 2);
+    $trecias_kintamas = rand(0, 2);
+    $ketvirtas_kintamas = rand(0, 2);
+    echo 'Cia matomi keturi random skaiciai: ' .  $pirmas_kintamas . ', ' . $antras_kintamas . ', ' . $trecias_kintamas . ', ' . $ketvirtas_kintamas;
+    $count0 = 0;
+    if ($pirmas_kintamas === 0) {
+        $count0++;
+    } 
+    if ($antras_kintamas === 0){
+        $count0++;
+    }
+    if ($trecias_kintamas === 0){
+        $count0++;
+    }
+    if ($ketvirtas_kintamas === 0){
+        $count0++;
+    }
+    echo '<br> Nuliu yra ' . $count0;
+    
+    $count1 = 0;
+    if ($pirmas_kintamas === 1) {
+        $count1++;
+    } 
+    if ($antras_kintamas === 1){
+        $count1++;
+    }
+    if ($trecias_kintamas === 1){
+        $count1++;
+    }
+    if ($ketvirtas_kintamas === 1){
+        $count1++;
+    }
+    echo '<br>Vienetu yra ' . $count1;
 
-//     Sukurkite keturis kintamuosius ir ​rand()​ funkcija sugeneruokite jiems 
-// reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. 
-// (sprendimui masyvo nenaudoti).
-
+    $count2 = 0;
+    if ($pirmas_kintamas === 2) {
+        $count2++;
+    } 
+    if ($antras_kintamas === 2){
+        $count2++;
+    }
+    if ($trecias_kintamas === 2){
+        $count2++;
+    }
+    if ($ketvirtas_kintamas === 2){
+        $count2++;
+    }
+    echo '<br>Dvejetu yra ' . $count2;
 
 //6.
 echo '<h3><b>SESTOJI UZDUOTIS.</b></h3>';
 
 $h_tag = rand(1, 6);
-echo "<h$h_tag>$h_tag</h$h_tag>";
+echo '<h' . $h_tag . '>' . $h_tag . '</h' . $h_tag . '>';
 
 
 //7.
@@ -98,28 +128,28 @@ echo "<h$h_tag>$h_tag</h$h_tag>";
     $skaicius1 = rand(-10, 10);
     $skaicius2 = rand(-10, 10);
     $skaicius3 = rand(-10, 10);
-    echo "Cia matomi $skaicius1, $skaicius2 ir $skaicius3 atsitiktiniai skaiciai.";
+    echo 'Cia matomi ' . $skaicius1 . ', ' . $skaicius2 . 'ir ' . $skaicius3 . 'atsitiktiniai skaiciai.';
 
     $pirmas = match(true) {
         $skaicius1 < 0 => "<span style='color: green;'>$skaicius1</span>",
         $skaicius1 > 0 => "<span style='color: blue;'>$skaicius1</span>",
         default => "<span style='color: red;'>$skaicius1</span>",
     };
-    echo "<h4>$pirmas</h4>";
+    echo '<h4>' . $pirmas . '</h4>';
 
     $antras = match(true) {
         $skaicius2 < 0 => "<span style='color: green;'>$skaicius2</span>",
         $skaicius2 > 0 => "<span style='color: blue;'>$skaicius2</span>",
         default => "<span style='color: red;'>$skaicius2</span>",
     };
-    echo "<h4>$antras</h4>";
+    echo '<h4>' . $antras . '</h4>';
 
     $trecias = match(true) {
         $skaicius3 < 0 => "<span style='color: green;'>$skaicius3</span>",
         $skaicius3 > 0 => "<span style='color: blue;'>$skaicius3</span>",
         default => "<span style='color: red;'>$skaicius3</span>",
     };
-    echo "<h4>$trecias</h4>";
+    echo '<h4>' . $trecias . '</h4>';
 
 //8.
 echo '<h3><b>ASTUNTOJI UZDUOTIS.</b></h3>';
@@ -128,9 +158,9 @@ echo '<h3><b>ASTUNTOJI UZDUOTIS.</b></h3>';
     $nuolaida_uz_2000 = $zvakes - ($zvakes * 0.04);
 
     if ($zvakes >= 1000 && $zvakes < 2000) {
-        echo "$zvakes zvakes su 3% nuolaida kainuos $nuolaida_uz_1000 eurus";
+        echo $zvakes . ' zvakes su 3% nuolaida kainuos ' .  $nuolaida_uz_1000 . ' eurus';
     } elseif ($zvakes >= 2000) {
-        echo "$zvakes zvakes su 4% nuolaida kainuos $nuolaida_uz_2000 eurus";
+        echo $zvakes . ' zvakes su 4% nuolaida kainuos ' . $nuolaida_uz_2000 . ' eurus';
     }
 
 //9.
@@ -141,7 +171,7 @@ echo '<h3><b>DEVINTOJI UZDUOTIS.</b></h3>';
     $treciasis = rand(0, 100);
 
     $vidurkis_nr_1 = round(($pirmasis + $antrasis + $treciasis) / 3);
-    echo "Pirmasis vidurkis $vidurkis_nr_1";
+    echo 'Pirmasis vidurkis ' . $vidurkis_nr_1;
 
     /*
     truksta antros dalies
@@ -154,7 +184,7 @@ echo '<h3><b>DESIMTOJI UZDUOTIS.</b></h3>';
     $minutes = rand(0, 59);
     $sekundes = rand(0, 59);
 
-    echo "Laikrodis dabar rodo: " . sprintf("%02d:%02d:%02d", $valandos, $minutes, $sekundes) . "<br>";
+    echo 'Laikrodis dabar rodo: ' . sprintf("%02d:%02d:%02d", $valandos, $minutes, $sekundes) . '<br>';
     
     $papildomos_sec = rand(0, 300);
 
@@ -173,7 +203,7 @@ echo '<h3><b>DESIMTOJI UZDUOTIS.</b></h3>';
         $valandos = $valandos % 24;
     }
 
-    echo "Laikas po $papildomos_sec sekundziu" . sprintf("%02d:%02d:%02d", $valandos, $minutes, $sekundes);
+    echo 'Laikas po ' . $papildomos_sec .  'sekundziu ' . sprintf("%02d:%02d:%02d", $valandos, $minutes, $sekundes);
 
 
 //11.
