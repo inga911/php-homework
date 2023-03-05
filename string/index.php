@@ -64,16 +64,38 @@ echo '<br>' . str_replace($del_vowels, '', $str_d);
 
 //8.
 echo '<h3><b>ASTUNTOJI UZDUOTIS.</b></h3>';
+$str_wars = 'Star Wars: Episode ';
+echo $str_wars.str_repeat(' ', rand(0,5)). rand(1,9) . ' - A New Hope';
 
 
 
 //9.
 echo '<h3><b>DEVINTOJI UZDUOTIS.</b></h3>';
-
+$string_en = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood";
+$string_lt = 'Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale';
+$words = explode(' ', $string_lt);
+$count = 0;
+foreach ($words as $word) {
+    if (strlen($word) <= 5) {
+        $count++;
+    }
+}
+echo "Žodžių, kurių ilgis yra trumpesnis arba lygus nei 5 raidės, yra: " . $count;
 
 
 //10.
 echo '<h3><b>DESIMTOJI UZDUOTIS.</b></h3>';
+$raides = 3;
+function getRandomStr($raides) {
+    $simboliai = 'abcdefghijklmnoprstuvz';
+    $randStr = '';
+    for ($i = 0; $i < $raides; $i++) {
+        $index = rand(0, strlen($simboliai) -1);
+        $randStr = $randStr.$simboliai[$index];
+    }
+    return $randStr;
+}
+echo "Atsitiktinis 3-ju lotynisku raidziu string'as: " . getRandomStr($raides);
 
 
 
