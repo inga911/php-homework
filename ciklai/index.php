@@ -7,8 +7,8 @@ echo '<h3><b>PIRMOJI UZDUOTIS.</b></h3>';
 // for ($x = 0; $x <=400; $x++){
 //     echo '<p style="display: inline-block">*</p>';
 // }
-//b.
 
+//b.
 $stars = str_repeat('*', 400);
 $lines = str_split($stars, 50);
 foreach($lines as $line){
@@ -47,14 +47,41 @@ for ($i = 1; $i <= $numb_rand; $i++) {
 //4.
 echo '<h3><b>KETVIRTOJI UZDUOTIS.</b></h3>';
 
+require './kvadratas.php';
+
 //5.
  echo '<h3><b>PENKTOJI UZDUOTIS.</b></h3>';
+//TARP 4 UZDUOTIES
 
 //6.
 echo '<h3><b>SESTOJI UZDUOTIS.</b></h3>';
+// 1)
+echo '-----<b>sustabdyti iškritus herbui----</b><br>';
+while (true){
+    $rezultatas1 = rand(0, 1);
+    if($rezultatas1 === 0){
+        echo 'Iskrito: ' . $rezultatas1 . '--> H<br>';
+        break;
+    }else{
+        echo 'Iskrito: ' . $rezultatas1 .  '--> S<br>';
+    }
+}
+
+// 2)
+echo '-----<b>sustabdyti 3kartus iškritus herbui----</b><br>';
+
+
+// 3)
+echo '-----<b>sustabdyti 3kartus is eiles iškritus herbui----</b><br>';
+
+
 
 //7.
 echo '<h3><b>SEPTINTOJI UZDUOTIS.</b></h3>';
+$petroTaskai = rand(10, 20);
+$kazioTaskai = rand(5, 25);
+echo 'Petras- ' . $petroTaskai . ':' . 'Kazys- ' . $kazioTaskai . 'Partija laimmejo: ';
+
 
 //8.
 echo '<h3><b>ASTUNTOJI UZDUOTIS.</b></h3>';
