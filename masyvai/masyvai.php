@@ -185,23 +185,18 @@ print_r($combo_arr);
 
 //10.
 echo '<h3><b>DESIMTOJI UZDUOTIS.</b></h3>';
-//rasti 2pirmus skaicius
-$du_pirmi = array();
-for($i = 0; $i < 2; $i++){
-    $du_pirmi[] = rand(5, 25);
-} 
-print_r($du_pirmi);
-//rasti 3    1+2=>3
-$trecias = array_sum($du_pirmi);
-echo 'trecias:' . $trecias;
-//rasti 4    2+3=>4
-$ketvirtas = $galutinis[2] + $galutinis[3];
-echo 'ketvirtas:' . $ketvirtas;
+$first_num = rand(5, 25);
+$second_num = rand(5, 25);
 
+$third_num = $first_num + $second_num;
 
+$array = array($first_num, $second_num, $third_num);
+for ($i = 3; $i < 10; $i++) {
+    $next_num = $array[$i - 1] + $array[$i - 2];
+    $array[] = $next_num;
+}
 
-$galutinis = array(...$du_pirmi, $trecias);
-print_r($galutinis);
+print_r($array);
 
 
 
@@ -210,3 +205,4 @@ print_r($galutinis);
 
 //11.
 echo '<h3><b>VENUOLIKTOJI UZDUOTIS.</b></h3>';
+
