@@ -199,10 +199,6 @@ for ($i = 3; $i < 10; $i++) {
 print_r($array);
 
 
-
-
-
-
 //11.
 echo '<h3><b>VENUOLIKTOJI UZDUOTIS.</b></h3>';
 
