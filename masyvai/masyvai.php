@@ -4,7 +4,7 @@ echo '<pre>';
 //1.
 echo '<h3><b>PIRMOJI UZDUOTIS.</b></h3>';
 
-$to_array = array();
+$to_array = [];
 for ($i = 0; $i < 30; $i++){
     $to_array[] = rand(5, 25);
 }
@@ -51,7 +51,7 @@ echo 'd) Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reik
 
 
 echo 'e) Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39' . "\n";
-$extra_array = array();
+$extra_array = [];
 for ($i = 0; $i < 10; $i++){
     $extra_array[] = rand(5, 25);
 }
@@ -61,8 +61,8 @@ print_r($new_extra_array);
 
 echo 'f) Iš masyvo elementų sukurkite du naujus masyvus. Vienas turi būti sudarytas iš neporinių indekso reikšmių, o kitas iš porinių' . "\n";
 
-$liginiai_i = array();
-$nelyginiai_i = array();
+$liginiai_i = [];
+$nelyginiai_i = [];
 
 foreach($new_extra_array as $index) {
     if ($index % 2 == 0) {
@@ -152,14 +152,14 @@ print_r($raidziu_arr);
 
 //6.
 echo '<h3><b>SESTOJI UZDUOTIS.</b></h3>';
-$pirmas_arr = array();
+$pirmas_arr = [];
 for($i = 0; $i < 100; $i++){
     $pirmas_arr[] = rand(100, 999);
 } 
 $unikalus_pirmas = array_unique($pirmas_arr);      
 print_r($unikalus_pirmas);
 
-$antras_arr = array();
+$antras_arr = [];
 for($i = 0; $i < 100; $i++){
     $antras_arr[] = rand(100, 999);
 }       
