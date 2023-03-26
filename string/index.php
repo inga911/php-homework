@@ -131,3 +131,11 @@ $rand_words = array($str_to_array[$rand_index[0]],
 $string_from_a = implode(' ', $rand_words);
 echo '<br>' . "<b>String'as iš 10 atsitiktinių žodžių: </b><br>" . $string_from_a;
 
+
+echo '<br><br>-----code wars-------<br><br>';
+function noSpace($x){
+    $withoutSpace = str_replace(' ', '', $x);
+    return $withoutSpace;
+}
+
+echo noSpace('8aaaaa dddd r     ');

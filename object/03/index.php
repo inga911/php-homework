@@ -1,9 +1,9 @@
 <?php
 
-require __DIR__ . '/Kibiras.php';
+require __DIR__ . '/Kibiras2.php';
 
-$k1 = new Kibiras1(200, 5);
-$k2 = new Kibiras1(100, 7);
+$k1 = new Kibiras2(200, 5);
+$k2 = new Kibiras2(100, 7);
 $k3 = clone $k2;
 
 $k1->prideti1Akmeni();

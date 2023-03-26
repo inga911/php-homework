@@ -2,14 +2,14 @@
 
 require __DIR__ . '/Pinigine.php';
 
-$pinigine1 = new Pinigine;
+$p = new Pinigine;
 
-$pinigine1->ideti(5);
-$pinigine1->ideti(2);
-$pinigine1->ideti(1);
+$p->ideti(5);
+$p->ideti(22.67);
+$p->ideti(111);
 
 // $pinigine1->skaiciuoti();
 
 
 // var_dump($pinigine1);
-echo  $pinigine1->skaiciuoti(); 
+echo  $p->skaiciuoti(); 

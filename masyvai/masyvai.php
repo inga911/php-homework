@@ -202,3 +202,26 @@ print_r($array);
 //11.
 echo '<h3><b>VENUOLIKTOJI UZDUOTIS.</b></h3>';
 
+
+
+function personalId(){
+    static $ids = [];
+    $id_number = '';
+    do {
+    $birth_century = rand(3,6);//20th and 21th century
+    $birth_year = rand(0,99);
+    $birth_month = rand(01, 12);
+    $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $birth_month, date("Y"));
+    $birth_day = rand(01, $daysInMonth);
+    $sequence_numb = rand(0, 999);
+    $control_numb = rand(0, 9);
+    $id_number = sprintf('%d%02d%02d%03d%d', $birth_century, $birth_year, $birth_month, $birth_day, $sequence_numb, $control_numb);    
+   
+}while (in_array($id_number, $ids));
+
+    $ids[] = $id_number;
+
+    return $id_number;
+}
+
+echo personalId();

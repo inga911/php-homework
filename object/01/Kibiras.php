@@ -1,23 +1,34 @@
-<?php 
+<?php
+
+class Kibiras1 {
+
+    protected $akmenuKiekis, $numeris;
 
 
-class Kibiras{
+    public function __construct(int $jauYra, int $numeris)
+    {
+        $this->akmenuKiekis = $jauYra;
+        $this->numeris = $numeris;
+    }
 
-    protected $akmenuKiekis = 0;
+    public function __clone()
+    {
+        $this->numeris = 5;
+    }
 
-    public function pridetiAkmeni() {
+    public function prideti1Akmeni() :void // funkcija nieko negrazina = void
+    {
         $this->akmenuKiekis++;
     }
 
-    public function pridetiDaugAkmenu($kiekis) {
+    public function pridetiDaugAkmenu(int $kiekis) :void
+    {
         $this->akmenuKiekis += $kiekis;
     }
 
-    public function kiekPririnktaAkmenu() {
-        return $this->akmenuKiekis;
+    public function kiekPririnktaAkmenu() :void
+    {
+        echo '<h2>Nr.:'. $this->numeris .' pririnkta: ' .$this->akmenuKiekis .'</h2>'; 
     }
 
-
 }
-
-?>
